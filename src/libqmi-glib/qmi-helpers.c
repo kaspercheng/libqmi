@@ -479,7 +479,7 @@ qmi_helpers_get_transport_type (const gchar  *path,
     if (usb_driver) {
         if (!g_strcmp0 (usb_driver, "cdc_mbim"))
             return QMI_HELPERS_TRANSPORT_TYPE_MBIM;
-        if (!g_strcmp0 (usb_driver, "qmi_wwan"))
+        if (!g_strcmp0 (usb_driver, "qmi_wwan") || !g_strcmp0 (usb_driver, "qmi_wwan_q"))
             return QMI_HELPERS_TRANSPORT_TYPE_QMUX;
         g_set_error (error, QMI_CORE_ERROR, QMI_CORE_ERROR_FAILED,
                      "unexpected usb driver detected: %s", usb_driver);
